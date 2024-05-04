@@ -1,0 +1,32 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.container {
+    width: 80%;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.video-container {
+    width: 640px; /* Adjust the width as needed */
+    height: 360px; /* Adjust the height as needed */
+    background-color: #ccc; /* Placeholder color */
+    margin: 20px auto;
+}
+
+.animal-list {
+    margin-top: 30px;
+}
+
+#animalList li {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+#animalList li img {
+    width: 50px;
+    height: 50px;
+    margin-right: 15px;
+}
