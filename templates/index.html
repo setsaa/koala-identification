@@ -9,14 +9,31 @@
 <body>
     <div class="container">
         <h1>Drone Live Feed</h1>
-
-        <div class="video-container">
+    
+        <div class="content">
+            <div class="video-container" id="videoContainer">
+                <!-- Video feed goes here -->
             </div>
-
+            <div class="stats-box">
+                <h2>Drone Status</h2>
+                <ul>
+                    <li><strong>Battery:</strong> <span id="batteryLevel">80%</span></li>
+                    <li><strong>Date:</strong> <span id="droneDate">2024-05-01</span></li>
+                    <li><strong>Time:</strong> <span id="droneTime">10:27:21.240752</span></li>
+                    <li><strong>Speed:</strong> <span id="droneSpeed">0.9 m/s</span></li>
+                    <li><strong>Altitude:</strong> <span id="droneAltitude">10.5 m</span></li>
+                    <li><strong>GPS:</strong> <span id="droneGPS">N/A</span></li>
+                    <li><strong>Temperature:</strong> <span id="droneTemperature">25°C</span></li>
+                    <!-- Add more stats as needed -->
+                </ul>
+            </div>
+        </div>
+    
         <div class="animal-list">
             <h2>Detected Animals</h2>
             <ul id="animalList">
-                </ul>
+                <!-- Animal list items go here -->
+            </ul>
         </div>
     </div>
 

@@ -3,20 +3,46 @@ body {
 }
 
 .container {
-    width: 80%;
-    margin: 0 auto;
-    text-align: center;
+    display: flex;
+    flex-direction: column;
+}
+
+.content {
+    display: flex;
 }
 
 .video-container {
-    width: 640px; /* Adjust the width as needed */
-    height: 360px; /* Adjust the height as needed */
-    background-color: #ccc; /* Placeholder color */
-    margin: 20px auto;
+    flex: 1;
+}
+
+.stats-box {
+    background-color: #f0f0f0;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-left: 20px;
+}
+
+.stats-box h2 {
+    margin-top: 0;
+}
+
+.stats-box ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.stats-box li {
+    margin-bottom: 10px;
 }
 
 .animal-list {
     margin-top: 30px;
+}
+
+#animalList {
+    list-style: none;
+    margin-left: 20px;
 }
 
 #animalList li {
@@ -26,7 +52,7 @@ body {
 }
 
 #animalList li img {
-    width: 50px;
-    height: 50px;
+    width: 80px;
+    height: 80px;
     margin-right: 15px;
 }
