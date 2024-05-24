@@ -6,12 +6,11 @@ from tensorflow.keras.preprocessing import image
 
 class Processor:
     def __init__(self):
-        # Load the TensorFlow ResNet50 model
+        # Load the model
         self.model = ResNet50(weights='imagenet')
         self.model.trainable = False  # Set the model to inference mode
 
     def process_frame(self, frame: cv2.typing.MatLike):
-        return []
         try:
             # Prepare the frame for the model
             prepared_frame = load_and_prepare_image(frame)

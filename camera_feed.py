@@ -26,7 +26,8 @@ def set_tracking(active: bool):
 def start_tracking():
     print('Starting tracking...')
     global tracking_thread, tracking_active
-    if not tracking_active:
+
+    if tracking_thread is None or not tracking_thread.is_alive():
         tracking_active = True
         tracking_thread = threading.Thread(target=frame_processor, args=(processor,))
         tracking_thread.start()
@@ -34,11 +35,12 @@ def start_tracking():
 
 def stop_tracking():
     print('Stopping tracking...')
-    global tracking_active
-
+    global tracking_active, tracking_thread
     tracking_active = False
+
     if tracking_thread is not None:
         tracking_thread.join()  # type:ignore # Wait for the thread to finish
+        tracking_thread = None  # Reset the thread
 
 
 def generate_frames(stream_index=2):
@@ -66,7 +68,9 @@ def generate_frames(stream_index=2):
 
 
 def frame_processor(image_processor: Processor):
-    while True:
+    global tracking_active
+
+    while tracking_active:
         if not frame_queue.empty():
             frame = frame_queue.get()
             results = image_processor.process_frame(frame)

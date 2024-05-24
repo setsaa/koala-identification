@@ -19,6 +19,7 @@ def index():
 
 @app.route('/start_tracking', methods=['POST'])
 def start_tracking_route():
+    print('Received package to start tracking')
     set_tracking(True)
     session['tracking'] = True
     return jsonify({'status': 'Tracking started'})
@@ -26,6 +27,7 @@ def start_tracking_route():
 
 @app.route('/stop_tracking', methods=['POST'])
 def stop_tracking_route():
+    print('Received package to stop tracking')
     set_tracking(False)
     session['tracking'] = False
     return jsonify({'status': 'Tracking stopped'})
