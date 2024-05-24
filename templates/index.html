@@ -4,15 +4,25 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Drone Live Feed Interface</title>
-    <link rel="stylesheet" href="static/style.css">
+    <link rel="stylesheet" href="/static/style.css">
 </head>
 <body>
     <div class="container">
         <h1>Drone Live Feed</h1>
     
         <div class="content">
-            <div class="video-container" id="videoContainer">
-                <!-- Video feed goes here -->
+            <div class="video-controls">
+                <p><span id="toggleSliderText">Begin Tracking</span>:</p>
+                <label class="switch">
+                    <input id="toggleSlider" type="checkbox">
+                    <span class="slider round"></span>
+                </label>
+            </div>
+            <div id="video-status">
+                <p>Status:<span id="trackingStatus"> Idle</span></p>
+            </div>
+            <div class="video-container">
+                <img id="liveVideo" src="/video_feed" width="640" height="480"/>
             </div>
             <div class="stats-box">
                 <h2>Drone Status</h2>
@@ -24,19 +34,16 @@
                     <li><strong>Altitude:</strong> <span id="droneAltitude">10.5 m</span></li>
                     <li><strong>GPS:</strong> <span id="droneGPS">N/A</span></li>
                     <li><strong>Temperature:</strong> <span id="droneTemperature">25°C</span></li>
-                    <!-- Add more stats as needed -->
                 </ul>
             </div>
         </div>
-    
+
         <div class="animal-list">
             <h2>Detected Animals</h2>
-            <ul id="animalList">
-                <!-- Animal list items go here -->
-            </ul>
+            <ul id="animalList"></ul>
         </div>
     </div>
 
-    <script src="static/script.js"></script>
+    <script src="/static/script.js"></script>
 </body>
 </html>
