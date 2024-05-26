@@ -160,5 +160,7 @@ cython_debug/
 #.idea/
 
 
-# Don't upload resnet
-/local_resnet_model
+# Model
+*.h5
+*.weights
+*.cfg
