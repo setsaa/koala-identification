@@ -33,10 +33,19 @@ def stop_tracking_route():
     return jsonify({'status': 'Tracking stopped'})
 
 
+@app.route('/detected_koalas')
+def get_detected_animals():
+    from camera_feed import detected_koalas
+    if detected_koalas:
+        return jsonify(detected_koalas)
+    else:
+        return jsonify({'status': 'no koalas found'})
+
+
 @app.route('/video_feed')
 def video_feed():
     return Response(generate_frames(), mimetype='multipart/x-mixed-replace; boundary=frame')
 
 
 if __name__ == '__main__':
-    app.run(debug=True) 
+    app.run(debug=True, host='0.0.0.0', port=8000)

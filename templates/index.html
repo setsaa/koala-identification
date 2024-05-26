@@ -4,45 +4,43 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Drone Live Feed Interface</title>
+    <link rel="icon" type="image/x-icon" href="/static/favicon.ico">
     <link rel="stylesheet" href="/static/style.css">
 </head>
 <body>
-    <div class="container">
+    <header>
         <h1>Drone Live Feed</h1>
-    
-        <div class="content">
-            <div class="video-controls">
-                <p><span id="toggleSliderText">Begin Tracking</span>:</p>
-                <label class="switch">
-                    <input id="toggleSlider" type="checkbox">
-                    <span class="slider round"></span>
-                </label>
-            </div>
-            <div id="video-status">
-                <p>Status:<span id="trackingStatus"> Idle</span></p>
-            </div>
-            <div class="video-container">
-                <img id="liveVideo" src="/video_feed" width="640" height="480"/>
-            </div>
-            <div class="stats-box">
-                <h2>Drone Status</h2>
-                <ul>
-                    <li><strong>Battery:</strong> <span id="batteryLevel">80%</span></li>
-                    <li><strong>Date:</strong> <span id="droneDate">2024-05-01</span></li>
-                    <li><strong>Time:</strong> <span id="droneTime">10:27:21.240752</span></li>
-                    <li><strong>Speed:</strong> <span id="droneSpeed">0.9 m/s</span></li>
-                    <li><strong>Altitude:</strong> <span id="droneAltitude">10.5 m</span></li>
-                    <li><strong>GPS:</strong> <span id="droneGPS">N/A</span></li>
-                    <li><strong>Temperature:</strong> <span id="droneTemperature">25°C</span></li>
-                </ul>
-            </div>
-        </div>
+    </header>
 
-        <div class="animal-list">
+    <main class="container">
+        <section class="video-feed">
+            <div class="video-container">
+                <img id="liveVideo" src="/video_feed" alt="Live drone feed" />
+            </div>
+            <div class="video-controls">
+                <button id="toggleSlider" class="btn">Toggle Tracking</button>
+                <p id="trackingStatus">Status: Idle</p>
+            </div>
+        </section>
+
+        <aside class="stats-box">
+            <h2>Drone Status</h2>
+            <ul>
+                <li>Battery: <span id="batteryLevel">80%</span></li>
+                <li>Date: <span id="droneDate">2024-05-01</span></li>
+                <li>Time: <span id="droneTime">10:27:21</span></li>
+                <li>Speed: <span id="droneSpeed">0.9 m/s</span></li>
+                <li>Altitude: <span id="droneAltitude">10.5 m</span></li>
+                <li>GPS: <span id="droneGPS">N/A</span></li>
+                <li>Temperature: <span id="droneTemperature">25°C</span></li>
+            </ul>
+        </aside>
+
+        <section class="animal-list">
             <h2>Detected Animals</h2>
             <ul id="animalList"></ul>
-        </div>
-    </div>
+        </section>
+    </main>
 
     <script src="/static/script.js"></script>
 </body>

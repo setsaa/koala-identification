@@ -1,3 +1,6 @@
+"""
+Camera feed for drone. Used to manipulate the camera in various ways.
+"""
 import threading
 from queue import Queue
 
@@ -12,8 +15,16 @@ processor = Processor()
 tracking_thread = None
 tracking_active = False  # Global variable to track the tracking state
 
+detected_koalas = []
+
 
 def set_tracking(active: bool):
+    """
+    Toggle the tracking status for the drone.
+
+    :param active:
+    :return:
+    """
     global tracking_active
     tracking_active = active
 
@@ -24,6 +35,9 @@ def set_tracking(active: bool):
 
 
 def start_tracking():
+    """
+    Start tracking, meaning the AI/ML system is turned on.
+    """
     print('Starting tracking...')
     global tracking_thread, tracking_active
 
@@ -34,6 +48,9 @@ def start_tracking():
 
 
 def stop_tracking():
+    """
+    Stop tracking.
+    """
     print('Stopping tracking...')
     global tracking_active, tracking_thread
     tracking_active = False
@@ -44,9 +61,10 @@ def stop_tracking():
 
 
 def generate_frames(stream_index=2):
-    """ Generate frames from the camera feed.
+    """
+    Generate frames from the camera feed.
 
-    :param stream_index:
+    :param stream_index: source of the camera
     :return:
     """
     print('Starting video feed...')
@@ -68,12 +86,18 @@ def generate_frames(stream_index=2):
 
 
 def frame_processor(image_processor: Processor):
-    global tracking_active
+    """
+    Processes each frame for the ML model.
+    :param image_processor:
+    """
+    global tracking_active, detected_koalas
 
     while tracking_active:
         if not frame_queue.empty():
             frame = frame_queue.get()
             results = image_processor.process_frame(frame)
+            if results['label'] == 'koala':
+                detected_koalas.extend(results)
             results_queue.put(results)
 
 

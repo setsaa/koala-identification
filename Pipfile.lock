@@ -1,7 +1,7 @@
 {
     "_meta": {
         "hash": {
-            "sha256": "654c6954caa6f700d3df9fe7c0981238c82c0602fb71d9dc0180ddc48b5aed9e"
+            "sha256": "b6b8e12717b7344aef997a6ba0ada6936d57bba5d11913a47c2f82e129aba808"
         },
         "pipfile-spec": 6,
         "requires": {
@@ -2370,6 +2370,13 @@
             "markers": "python_version >= '3.9'",
             "version": "==2.16.1"
         },
+        "tensorflow-hub": {
+            "hashes": [
+                "sha256:e10c184b3d08daeafada11ffea2dd46781725b6bef01fad1f74d6634ad05311f"
+            ],
+            "index": "pypi",
+            "version": "==0.16.1"
+        },
         "tensorflow-io-gcs-filesystem": {
             "hashes": [
                 "sha256:03d5598b8007551f4e1391bf85a83a1865e3fa0789beef15a200efaa06a23fb5",
@@ -2407,6 +2414,14 @@
             ],
             "markers": "python_version >= '3.8'",
             "version": "==0.18.1"
+        },
+        "tf-keras": {
+            "hashes": [
+                "sha256:b2ad0541fa7d9e92c4b7a1b96593377afb58aaff374299a6ca6be1a42f51d899",
+                "sha256:db53891f1ac98197c2acced98cdca8c06ba8255655a6cb7eb95ed49676118280"
+            ],
+            "markers": "python_version >= '3.9'",
+            "version": "==2.16.0"
         },
         "tf-slim": {
             "hashes": [
@@ -2623,6 +2638,13 @@
             ],
             "markers": "python_version >= '3.8'",
             "version": "==3.1.2"
+        },
+        "yolov4": {
+            "hashes": [
+                "sha256:0f5f8e71479f00c7e2b835f5fe40de503a136d43ff30b5739ddecc7f7eb4cc75"
+            ],
+            "index": "pypi",
+            "version": "==3.2.0"
         }
     },
     "develop": {}

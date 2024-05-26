@@ -20,6 +20,8 @@ lvis = "*"
 contextlib2 = "*"
 matplotlib = "*"
 pillow = "*"
+tensorflow-hub = "*"
+yolov4 = "*"
 
 [dev-packages]
 
