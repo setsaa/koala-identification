@@ -22,6 +22,10 @@ matplotlib = "*"
 pillow = "*"
 tensorflow-hub = "*"
 yolov4 = "*"
+torch = "*"
+torchvision = "*"
+ultralytics = "*"
+dill = "*"
 
 [dev-packages]
 

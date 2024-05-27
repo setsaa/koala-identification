@@ -13,7 +13,7 @@ results_queue = Queue()
 processor = Processor()
 
 tracking_thread = None
-tracking_active = False  # Global variable to track the tracking state
+tracking_active = False
 
 detected_koalas = []
 
@@ -65,7 +65,6 @@ def generate_frames(stream_index=2):
     Generate frames from the camera feed.
 
     :param stream_index: source of the camera
-    :return:
     """
     print('Starting video feed...')
     camera = cv2.VideoCapture(stream_index)
